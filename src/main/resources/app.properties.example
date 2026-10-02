@@ -1,0 +1,7 @@
+# Copy this file to app.properties (same folder) and fill in your own values.
+# app.properties is listed in .gitignore, so your real password is never uploaded.
+# On a hosting server, set these as environment variables instead.
+DB_URL=jdbc:postgresql://localhost:5432/result_management
+DB_USER=postgres
+DB_PASSWORD=your_password_here
+TEACHER_ACCESS_CODE=choose_a_secret_code

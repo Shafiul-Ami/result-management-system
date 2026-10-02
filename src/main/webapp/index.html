@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduResult – College Result Portal</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="navbar"></div>   <!-- common.js fills this -->
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <span class="tag">Digital Result Management</span>
+          <h1>Manage college results the smart, paperless way</h1>
+          <p>Teachers enter marks for 5 subjects and announce the result date.
+             Students check their marksheet online the moment it is released.</p>
+          <div class="hero-actions">
+            <a href="result.html" class="btn btn-light">Check Your Result</a>
+            <a href="login.html" class="btn btn-outline">Teacher Portal</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h4>Sample Marksheet</h4>
+          <div class="mini-row"><span>Mathematics</span><span>92</span></div>
+          <div class="mini-row"><span>Physics</span><span>85</span></div>
+          <div class="mini-row"><span>Chemistry</span><span>78</span></div>
+          <div class="mini-row"><span>English</span><span>88</span></div>
+          <div class="mini-row"><span>Computer Science</span><span>95</span></div>
+          <div class="mini-row"><span>Total · Grade</span><span>438 / 500 · A</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Everything in one place</h2>
+          <p>A simple workflow for teachers and students</p>
+        </div>
+        <div class="grid grid-3">
+          <div class="card feature">
+            <div class="feature-icon">👩‍🎓</div>
+            <h3>Manage Students</h3>
+            <p>Add, edit and remove students with roll number, class and date of birth.</p>
+          </div>
+          <div class="card feature">
+            <div class="feature-icon">✏️</div>
+            <h3>Enter Marks</h3>
+            <p>Record marks for 5 subjects. Total, percentage and grade are calculated automatically.</p>
+          </div>
+          <div class="card feature">
+            <div class="feature-icon">📅</div>
+            <h3>Scheduled Release</h3>
+            <p>Teachers announce a result date. Results unlock for students on that day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS + LATEST NOTICES -->
+    <section class="section" style="background:#fff">
+      <div class="container grid grid-2" style="align-items:start">
+        <div>
+          <div class="section-title" style="text-align:left;margin-bottom:28px">
+            <h2>How it works</h2>
+            <p>From marks entry to marksheet in four steps</p>
+          </div>
+          <div class="grid steps" style="gap:26px">
+            <div class="step"><h4>Teacher logs in</h4><p>Teachers register with the college access code and sign in.</p></div>
+            <div class="step"><h4>Add students &amp; marks</h4><p>Enter each student's details and marks for 5 subjects.</p></div>
+            <div class="step"><h4>Announce result date</h4><p>Publish a result notice for a class with the release date.</p></div>
+            <div class="step"><h4>Students check results</h4><p>On that date students enter roll number and date of birth to see their marksheet.</p></div>
+          </div>
+        </div>
+        <div>
+          <div class="card-title" style="margin-bottom:18px">
+            <h2 style="font-size:1.5rem">Latest Notices</h2>
+            <a href="notices.html" class="btn btn-ghost btn-sm">View all</a>
+          </div>
+          <div id="latest-notices" class="notice-list"><div class="loader"></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>   <!-- common.js fills this -->
+
+  <script src="js/common.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

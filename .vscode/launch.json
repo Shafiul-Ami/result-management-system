@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "DbTest",
+      "request": "launch",
+      "mainClass": "com.resultmanage.util.DbTest",
+      "projectName": "ResultManagementSystem_45122c68"
+    },
+    {
+      "type": "java",
+      "name": "Debug on Tomcat",
+      "request": "attach",
+      "hostName": "localhost",
+      "port": 8000,
+      "preLaunchTask": "Tomcat: Build, Deploy & Start"
+    },
+    {
+      "type": "java",
+      "name": "Attach to running Tomcat",
+      "request": "attach",
+      "hostName": "localhost",
+      "port": 8000
+    }
+  ]
+}

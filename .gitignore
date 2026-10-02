@@ -1,0 +1,12 @@
+# Build output (re-created by build.ps1)
+build/
+bin/
+*.war
+*.class
+
+# SECRETS - never upload (copy app.properties.example to create it)
+src/main/resources/app.properties
+
+# OS junk
+Thumbs.db
+.DS_Store

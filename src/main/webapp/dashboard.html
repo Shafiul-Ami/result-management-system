@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="dashboard.html" class="brand"><span class="brand-logo">E</span>Edu<b>Result</b></a>
+      <nav style="display:flex;align-items:center;gap:12px">
+        <span class="muted">Hello, <strong id="teacher-name">...</strong></span>
+        <button class="btn btn-ghost btn-sm" id="logout">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding:30px 0">
+
+    <div class="grid grid-2" style="align-items:start;margin-bottom:22px">
+
+      <!-- ADD / EDIT STUDENT -->
+      <div class="card">
+        <div class="card-title" id="form-title">Add New Student</div>
+        <form id="student-form">
+          <input type="hidden" name="id">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Roll Number</label>
+              <input name="rollNo" placeholder="e.g. BSC-01" required>
+            </div>
+            <div class="form-group">
+              <label>Student Name</label>
+              <input name="name" required>
+            </div>
+            <div class="form-group">
+              <label>Class</label>
+              <input name="className" list="class-list" placeholder="e.g. BSc CS 1st Year" required>
+            </div>
+            <div class="form-group">
+              <label>Date of Birth</label>
+              <input name="dob" type="date" required>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit" id="submit-btn">Add Student</button>
+            <button class="btn btn-ghost hidden" type="button" id="cancel-btn">Cancel Edit</button>
+          </div>
+          <p id="form-message" style="margin-top:12px"></p>
+        </form>
+      </div>
+
+      <!-- ENTER MARKS -->
+      <div class="card" id="marks-card">
+        <div class="card-title">Enter / Update Marks <span class="hint">Out of 100 · pass mark 40</span></div>
+        <form id="marks-form">
+          <div class="form-group" style="margin-bottom:16px">
+            <label>Student</label>
+            <select name="studentId" id="marks-student" required></select>
+          </div>
+          <div class="marks-grid" id="marks-inputs"></div>   <!-- JS creates 5 inputs here -->
+          <div class="preview">
+            <div><span>Total</span><strong id="pv-total">–</strong></div>
+            <div><span>Percentage</span><strong id="pv-percent">–</strong></div>
+            <div><span>Grade</span><strong id="pv-grade">–</strong></div>
+            <div><span>Status</span><strong id="pv-status">–</strong></div>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Save Marks</button>
+          </div>
+          <p id="marks-message" style="margin-top:12px"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- STUDENT TABLE -->
+    <div class="card">
+      <div class="card-title">All Students</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Roll No</th><th>Name</th><th>Class</th><th>Date of Birth</th><th>Result</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="student-rows">
+            <tr><td colspan="6">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+        <!-- ★ STEP 9: NOTICES -->
+    <div class="grid grid-2" style="align-items:start;margin-top:22px">
+
+      <div class="card">
+        <div class="card-title">Publish Notice</div>
+        <form id="notice-form" style="display:grid;gap:14px">
+          <div class="form-group">
+            <label>Title</label>
+            <input name="title" maxlength="200" placeholder="e.g. Semester 1 Results" required>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" placeholder="Write the notice for students..." required></textarea>
+          </div>
+
+          <label class="checkbox">
+            <input type="checkbox" id="is-result">
+            This notice announces a result release date
+          </label>
+
+          <div id="result-fields" class="form-grid hidden">
+            <div class="form-group">
+              <label>Result Release Date</label>
+              <input name="resultDate" type="date">
+            </div>
+            <div class="form-group">
+              <label>Class</label>
+              <input name="className" list="class-list" placeholder="Leave empty for all classes">
+            </div>
+            <span class="hint form-group full">Students of this class can see their result from this date.</span>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Publish Notice</button>
+          <p id="notice-message"></p>
+        </form>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Published Notices</div>
+        <div id="notice-list" class="notice-list">Loading...</div>
+      </div>
+    </div>
+
+    <!-- Suggestions for class names (filled by JS from your students) -->
+    <datalist id="class-list"></datalist>
+  </main>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
