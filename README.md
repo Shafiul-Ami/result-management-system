@@ -1,4 +1,4 @@
-# EduResult – College Result Management System
+# MGM – School Result Management System
 
 A web application where college teachers manage students and marks for 5 subjects, and publish a result date. On that date, students can check their marksheet online with their roll number and date of birth.
 
