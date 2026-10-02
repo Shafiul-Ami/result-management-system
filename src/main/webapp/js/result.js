@@ -48,6 +48,14 @@ function messageBox(title, text, isError) {
     </div>`;
 }
 
+// Print / Save as PDF — the browser uses the page title as the PDF file name
+function printMarksheet(rollNo) {
+  const oldTitle = document.title;
+  document.title = `MGM School Result ${new Date().getFullYear()} - ${rollNo}`;
+  window.print();
+  document.title = oldTitle;
+}
+
 // ===== The marksheet =====
 function marksheetHtml(data) {
   const s = data.student;
@@ -75,6 +83,7 @@ function marksheetHtml(data) {
     <div class="card marksheet">
       <div class="ms-head">
         <div>
+          <div class="ms-school">MGM School Result ${new Date().getFullYear()}</div>
           <h2>Statement of Marks</h2>
           <div style="opacity:.9;font-size:.9rem">Result declared on ${fmtDate(data.resultDate)}</div>
         </div>
@@ -107,7 +116,7 @@ function marksheetHtml(data) {
         </div>
 
         <div class="form-actions no-print" style="justify-content:center">
-          <button class="btn btn-primary" onclick="window.print()">Print / Save as PDF</button>
+          <button class="btn btn-primary" data-roll="${esc(s.rollNo)}" onclick="printMarksheet(this.dataset.roll)">Print / Save as PDF</button>
         </div>
       </div>
     </div>`;

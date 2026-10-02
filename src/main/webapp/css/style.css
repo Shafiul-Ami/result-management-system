@@ -260,6 +260,7 @@ td.num, th.num { text-align: center; }
 .marksheet { max-width: 820px; margin: 0 auto; padding: 0; overflow: hidden; }
 .ms-head { background: var(--grad); color: #fff; padding: 26px 30px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; }
 .ms-head h2 { font-size: 1.35rem; }
+.ms-school { font-size: .82rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; opacity: .9; margin-bottom: 4px; }
 .ms-body { padding: 28px 30px; }
 .ms-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin-bottom: 24px; }
 .ms-info div span { display: block; font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }

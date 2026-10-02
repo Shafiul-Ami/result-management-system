@@ -1,0 +1,32 @@
+# Render Blueprint: creates the PostgreSQL database and the web app together.
+# On render.com: New → Blueprint → pick this repository → Apply.
+# The database login details are passed to the app automatically — nothing to type in.
+
+databases:
+  - name: mgm-result-db
+    plan: free
+    databaseName: result_management
+    user: mgm_admin
+
+services:
+  - type: web
+    name: mgm-result-portal
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true            # every push to main redeploys the site
+    envVars:
+      - key: PORT               # Tomcat listens on 8080
+        value: "8080"
+      - key: DB_HOST
+        fromDatabase: { name: mgm-result-db, property: host }
+      - key: DB_PORT
+        fromDatabase: { name: mgm-result-db, property: port }
+      - key: DB_NAME
+        fromDatabase: { name: mgm-result-db, property: database }
+      - key: DB_USER
+        fromDatabase: { name: mgm-result-db, property: user }
+      - key: DB_PASSWORD
+        fromDatabase: { name: mgm-result-db, property: password }
+      - key: TEACHER_ACCESS_CODE  # random secret; view it in the Render dashboard → Environment
+        generateValue: true

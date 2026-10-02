@@ -56,7 +56,7 @@ function renderNavbar() {
   box.innerHTML = `
     <header class="navbar no-print">
       <div class="container nav-inner">
-        <a href="index.html" class="brand"><span class="brand-logo">E</span>Edu<b>Result</b></a>
+        <a href="index.html" class="brand"><span class="brand-logo">M</span>M.G.M. <b>Result</b></a>
         <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
         <nav class="nav-links">
           ${NAV_LINKS.map(link =>
@@ -80,7 +80,7 @@ function renderFooter() {
   box.innerHTML = `
     <footer class="footer no-print">
       <div class="container">
-        <span>&copy; ${new Date().getFullYear()} EduResult · College Result Management</span>
+        <span>&copy; ${new Date().getFullYear()} MGM School Result Portal</span>
         <span>Built with HTML, CSS, JavaScript &amp; Java Servlets</span>
       </div>
     </footer>`;
